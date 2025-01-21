@@ -9,15 +9,27 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Button("Hello, world!") {}
-                .font(.largeTitle)
-                .foregroundColor(.white)
-                .padding()
-                .background(.blue)
-                .clipShape(RoundedRectangle(cornerRadius: 10))
+        TabView {
+            Text("House Selected")
+                .tabItem {
+                    Label("Home", systemImage: "house")
+                }
+            
+            Text("Notifications Selected")
+                .tabItem {
+                    Label("Notification", systemImage: "bell")
+                }
+            
+            Text("Message Selected")
+                .tabItem {
+                    Label("Message", systemImage: "message")
+                }
+
+            Text("Profile Selected")
+                .tabItem {
+                    Label("Profile", systemImage: "person")
+                }
         }
-        .padding()
     }
 }
 
