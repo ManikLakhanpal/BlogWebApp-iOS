@@ -9,7 +9,19 @@ import SwiftUI
 
 struct ProfileView: View {
     var body: some View {
-        Text("Successfully added Profile view")
+        NavigationStack {
+            VStack {
+                Text("Successfully selected ProfileView")
+            }
+            .navigationTitle("Profile")
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("Menu", systemImage: "person.crop.circle") {
+                        
+                    }
+                }
+            }
+        }
     }
 }
 

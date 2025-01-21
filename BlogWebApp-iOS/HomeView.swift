@@ -9,7 +9,19 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        Text("Successfully selected HomeView")
+        NavigationStack {
+            VStack {
+                Text("Successfully selected HomeView")
+            }
+            .navigationTitle("Home")
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("Menu", systemImage: "person.crop.circle") {
+                        
+                    }
+                }
+            }
+        }
     }
 }
 
