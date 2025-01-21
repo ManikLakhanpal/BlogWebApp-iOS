@@ -25,7 +25,7 @@ struct ContentView: View {
                     Label("Message", systemImage: "message")
                 }
 
-            Text("Profile Selected")
+            ProfileView()
                 .tabItem {
                     Label("Profile", systemImage: "person")
                 }
