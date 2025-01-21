@@ -13,12 +13,19 @@ struct ProfileView: View {
             VStack {
                 Text("Successfully selected ProfileView")
             }
-            .navigationTitle("Profile")
             .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button("Menu", systemImage: "person.crop.circle") {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Text("Parent View")
+                        .font(.largeTitle)
+                        .fontWeight(.heavy)
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
                         
+                    } label: {
+                        Image(systemName:"person")
                     }
+                    
                 }
             }
         }
