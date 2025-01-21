@@ -23,7 +23,10 @@ struct ProfileView: View {
                     Button {
                         
                     } label: {
-                        Image(systemName:"person")
+                        Image(.manik)
+                            .resizable()
+                            .frame(width: 40, height: 40)
+                            .clipShape(Capsule())
                     }
                     
                 }
