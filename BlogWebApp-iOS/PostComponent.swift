@@ -64,7 +64,8 @@ struct PostComponent: View {
             
         }
         .padding(.vertical)
-        .border(.red)
+        
+        Divider()
     }
 }
 
