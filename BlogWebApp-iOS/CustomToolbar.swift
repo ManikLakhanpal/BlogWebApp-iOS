@@ -12,24 +12,24 @@ struct CustomToolbar: ToolbarContent {
     let imageName: String
     let onImageTap: () -> Void
     
-    let paddingVal = 16.0
+    let paddingVal = 25.0
     
     var body: some ToolbarContent {
         ToolbarItem(placement: .navigationBarLeading) {
             Text(title)
                 .font(.largeTitle)
                 .fontWeight(.heavy)
-                .padding(.top, paddingVal)
+                .padding(.vertical, paddingVal)
         }
         
         ToolbarItem(placement: .navigationBarTrailing) {
             Button(action: onImageTap) {
                 Image(imageName)
                     .resizable()
-                    .frame(width: 40, height: 40)
+                    .frame(width: 32, height: 32)
                     .clipShape(Capsule())
             }
-            .padding(.top, paddingVal)
+            .padding(.vertical, paddingVal)
         }
     }
 }

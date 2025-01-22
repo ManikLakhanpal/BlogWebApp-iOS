@@ -37,6 +37,12 @@ struct PostComponent: View {
             HStack(alignment: .center) {
                 VStack(alignment: .leading, spacing: 0.0) {
                     Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
+                        .padding(.bottom, 8)
+                    
+                    Text("20 Jan 2025, 8:12 am")
+                    
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
                 }
                 .padding(.leading, 10)
             }
@@ -51,6 +57,7 @@ struct PostComponent: View {
                 Spacer()
                 Label("" ,systemImage: "square.and.arrow.up")
             }
+            .foregroundStyle(.secondary)
             .padding(.horizontal)
             .padding(.top, 10)
             
