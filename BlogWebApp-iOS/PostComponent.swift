@@ -14,15 +14,17 @@ struct PostComponent: View {
                 
                 Image(.manik)
                     .resizable()
-                    .frame(width: 60, height: 60)
+                    .frame(width: 50, height: 50)
                     .clipShape(Circle())
                 
                 VStack(alignment: .leading, spacing: 0.0) {
                     Text("Manik Lakhanpal")
                         .font(.title2)
                         .fontWeight(.medium)
+                    
                     Text("@w16manik")
                         .font(.subheadline)
+                        .foregroundStyle(.secondary)
                 }
                 .padding(.leading)
                 
