@@ -8,9 +8,18 @@
 import SwiftUI
 
 struct ProfileComponent: View {
+    
+    // Place holders below
+    private var name: String = "Manik Lakhanpal"
+    private var uid: String = "w16manik"
+    private var bio: String = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    
+    @State private var following: Bool = false
+    @State private var showSettings: Bool = false
+    
     var body: some View {
         VStack {
-            HStack(alignment: .center) {
+            HStack(alignment: .top) {
                 Image(.manik)
                     .resizable()
                     .frame(width: 80, height: 80)
@@ -18,23 +27,36 @@ struct ProfileComponent: View {
                     .clipShape(Circle())
                 
                 VStack(alignment: .leading, spacing: 0.0) {
-                    Text("Manik Lakhanpal")
+                    Text(name)
                         .font(.title2)
                         .fontWeight(.medium)
                     
-                    Text("@w16manik")
+                    Text("@\(uid)")
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
+                    
                     Button {
+                        print(following ? "Unfollow" : "Follow" + " clicked")
+                        withAnimation {
+                            following.toggle()
+                        }
                     } label: {
-                        Text("Follow")
-                            
+                        Text(following ? "Unfollow" : "Follow")
+                            .foregroundStyle(following ? .red : .blue)
                     }
                     .padding(.top, 5)
                     .buttonStyle(.borderless)
                     .controlSize(.small)
                 }
                 .padding(.leading)
+                
+                Button {
+                    print("Settings clicked")
+                    showSettings.toggle()
+                } label : {
+                    Label("", systemImage: "gearshape")
+                }
+                .foregroundStyle(.black)
                 
                 Spacer()
                 
@@ -44,7 +66,7 @@ struct ProfileComponent: View {
             
             HStack(alignment: .center) {
                 VStack(alignment: .leading, spacing: 0.0) {
-                    Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
+                    Text(bio)
                         .padding(.bottom, 8)
                 }
                 .padding(.leading, 10)
@@ -75,6 +97,9 @@ struct ProfileComponent: View {
             .padding(.horizontal)
         }
         .padding(.vertical)
+        .sheet(isPresented: $showSettings) {
+            Text("Setting Here")
+        }
         
         Divider()
     }

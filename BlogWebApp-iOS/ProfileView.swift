@@ -10,8 +10,16 @@ import SwiftUI
 struct ProfileView: View {
     var body: some View {
         NavigationStack {
-            VStack {
-                Text("Successfully selected ProfileView")
+            VStack(spacing: 0.0) {
+                ProfileComponent()
+                
+                ScrollView {
+                    LazyVStack {
+                        ForEach(0..<20, id: \.self) { _ in
+                            PostComponent()
+                        }
+                    }
+                }
             }
             .toolbar {
                 CustomToolbar(

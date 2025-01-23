@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CustomToolbar: ToolbarContent {
     let title: String
-    let imageName: String
+    let imageName: String?
     let onImageTap: () -> Void
     
     let paddingVal = 25.0
@@ -22,14 +22,17 @@ struct CustomToolbar: ToolbarContent {
                 .padding(.vertical, paddingVal)
         }
         
-        ToolbarItem(placement: .navigationBarTrailing) {
-            Button(action: onImageTap) {
-                Image(imageName)
-                    .resizable()
-                    .frame(width: 32, height: 32)
-                    .clipShape(Capsule())
+        if imageName != nil {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button(action: onImageTap) {
+                    Image(imageName?.lowercased() ?? "")
+                        .resizable()
+                        .frame(width: 32, height: 32)
+                        .clipShape(Capsule())
+                }
+                .padding(.vertical, paddingVal)
             }
-            .padding(.vertical, paddingVal)
         }
+        
     }
 }

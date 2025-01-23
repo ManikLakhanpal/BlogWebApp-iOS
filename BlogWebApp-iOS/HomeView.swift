@@ -12,13 +12,9 @@ struct HomeView: View {
         NavigationStack {
             ScrollView {
                 LazyVStack {
-                    PostComponent()
-                    PostComponent()
-                    PostComponent()
-                    PostComponent()
-                    PostComponent()
-                    PostComponent()
-                    PostComponent()
+                    ForEach(0..<20, id: \.self) { _ in
+                        PostComponent()
+                    }
                 }
             }
             .toolbar {
