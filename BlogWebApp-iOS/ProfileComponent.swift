@@ -14,12 +14,14 @@ struct ProfileComponent: View {
     private var uid: String = "w16manik"
     private var bio: String = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     
+    // Values to activate and change the view in this Profile Component
     @State private var following: Bool = false
     @State private var showSettings: Bool = false
     
     var body: some View {
         VStack {
             HStack(alignment: .top) {
+                // Profile Picture of the user below
                 Image(.manik)
                     .resizable()
                     .frame(width: 80, height: 80)
@@ -27,16 +29,19 @@ struct ProfileComponent: View {
                     .clipShape(Circle())
                 
                 VStack(alignment: .leading, spacing: 0.0) {
+                    // Name of the user below
                     Text(name)
                         .font(.title2)
                         .fontWeight(.medium)
                     
+                    // uid of the user below
                     Text("@\(uid)")
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                     
+                    // Follow and unfollow button below
                     Button {
-                        print(following ? "Unfollow" : "Follow" + " clicked")
+                        print((following ? "Unfollow" : "Follow") + " clicked")
                         withAnimation {
                             following.toggle()
                         }
@@ -50,6 +55,7 @@ struct ProfileComponent: View {
                 }
                 .padding(.leading)
                 
+                // Settings button below
                 Button {
                     print("Settings clicked")
                     showSettings.toggle()
@@ -64,6 +70,7 @@ struct ProfileComponent: View {
             
             .padding(.leading)
             
+            // Below is HStack for bio
             HStack(alignment: .center) {
                 VStack(alignment: .leading, spacing: 0.0) {
                     Text(bio)
@@ -72,6 +79,7 @@ struct ProfileComponent: View {
                 .padding(.leading, 10)
             }
             
+            // Below is Posts, Followers and Following counts
             HStack(alignment: .center, spacing: 10.0) {
                 VStack {
                     Text("Posts")
@@ -98,6 +106,7 @@ struct ProfileComponent: View {
         }
         .padding(.vertical)
         .sheet(isPresented: $showSettings) {
+            // TODO: Have to work on settings Sheet just like blogs
             Text("Setting Here")
         }
         

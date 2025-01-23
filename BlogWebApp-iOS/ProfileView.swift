@@ -13,6 +13,7 @@ struct ProfileView: View {
             VStack(spacing: 0.0) {
                 ProfileComponent()
                 
+                // Bleow is the scroll view for the posts related to the user
                 ScrollView {
                     LazyVStack {
                         ForEach(0..<20, id: \.self) { _ in
@@ -24,7 +25,7 @@ struct ProfileView: View {
             .toolbar {
                 CustomToolbar(
                     title: "Profile",
-                    imageName: "manik",
+                    imageName: nil,
                     onImageTap: {
                         print("Image tapped!")
                     }
