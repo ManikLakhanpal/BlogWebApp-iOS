@@ -7,7 +7,7 @@
 import Foundation
 import SwiftUI
 
-//struct Post: Codable {
+//struct Post: Codable, Hashable {
 //    let name: String
 //    let email: String
 //    let uid: String
@@ -23,22 +23,14 @@ import SwiftUI
 //}
 
 struct TryAPI: View {
-    @State private var joke: String = ""
+    @State var joke: [Post] = []
     @State private var showButton = true // Control visibility of the button
     
     var body: some View {
         VStack {
-            AsyncImage(url: URL(string: joke)) { image in
-                image
-                .resizable()
-                .scaledToFit()
-            } placeholder: {
-                ProgressView()
+            ForEach(joke, id: \.self) { i in
+                Text(i.name)
             }
-            .frame(width: 300, height: 300)
-            .border(.black, width: 3)
-            .clipShape(Circle())
-            
             
             // Show the button only when needed
             if showButton {
@@ -46,7 +38,7 @@ struct TryAPI: View {
                     Task {
                         let (data, _) = try await URLSession.shared.data(from: URL(string: "https://blogs-api.w16manik.ninja/posts")!)
                         let posts = try JSONDecoder().decode([Post].self, from: data)
-                        joke = posts.first?.photo ?? "nil"
+                        joke = posts
                     }
                 } label: {
                     Text("Fetch Joke")

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Post: Codable {
+struct Post: Codable, Hashable {
     let name: String
     let email: String
     let uid: String
