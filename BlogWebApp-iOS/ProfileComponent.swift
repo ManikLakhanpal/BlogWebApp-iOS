@@ -107,7 +107,7 @@ struct ProfileComponent: View {
         .padding(.vertical)
         .sheet(isPresented: $showSettings) {
             // TODO: Have to work on settings Sheet just like blogs
-            Text("Setting Here")
+            SettingsView()
         }
         
         Divider()
