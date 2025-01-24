@@ -7,10 +7,6 @@
 import Foundation
 import SwiftUI
 
-struct Joke: Codable {
-    let value: String
-}
-
 //struct Post: Codable {
 //    let name: String
 //    let email: String
@@ -26,18 +22,37 @@ struct Joke: Codable {
 //    }
 //}
 
-struct Try: View {
+struct TryAPI: View {
     @State private var joke: String = ""
+    @State private var showButton = true // Control visibility of the button
+    
     var body: some View {
-        Text(joke)
-        Button {
-            Task {
-                let (data, _) = try await URLSession.shared.data(from: URL(string: "https://blogs-api.w16manik.ninja/posts")!)
-                let posts = try JSONDecoder().decode([Post].self, from: data)
-                joke = posts.first?.photo ?? "nil"
+        VStack {
+            AsyncImage(url: URL(string: joke)) { image in
+                image
+                .resizable()
+                .scaledToFit()
+            } placeholder: {
+                ProgressView()
             }
-        } label: {
-            Text("\(convertUnixTimeToDateString(unixTime: 1737340942924))")
+            .frame(width: 300, height: 300)
+            .border(.black, width: 3)
+            .clipShape(Circle())
+            
+            
+            // Show the button only when needed
+            if showButton {
+                Button {
+                    Task {
+                        let (data, _) = try await URLSession.shared.data(from: URL(string: "https://blogs-api.w16manik.ninja/posts")!)
+                        let posts = try JSONDecoder().decode([Post].self, from: data)
+                        joke = posts.first?.photo ?? "nil"
+                    }
+                } label: {
+                    Text("Fetch Joke")
+                }
+                .padding() // Styling for the button
+            }
         }
     }
 }
@@ -57,5 +72,5 @@ struct Try: View {
 //}
 
 #Preview {
-    Try()
+    TryAPI()
 }

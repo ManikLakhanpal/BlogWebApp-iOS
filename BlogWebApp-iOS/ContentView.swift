@@ -39,7 +39,7 @@ struct ContentView: View {
                 }
             
             // Currently work in progress
-            Text("Message Selected")
+            TryAPI()
                 .tabItem {
                     Label("Message", systemImage: "message")
                 }
