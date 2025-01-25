@@ -21,11 +21,11 @@ struct PostComponent: View {
                 AsyncImage(url: URL(string: "\(post.photo)")) { image in
                     image
                         .resizable()
+                        .frame(width: 50, height: 50)
                         .clipShape(Circle())
                 } placeholder: {
                     ProgressView()
                 }
-                .frame(width: 50, height: 50)
                 
                 VStack(alignment: .leading, spacing: 0.0) {
                     Text("\(post.name)")
