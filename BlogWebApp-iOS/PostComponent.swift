@@ -8,21 +8,31 @@
 import SwiftUI
 
 struct PostComponent: View {
+    var post: Post
+    
     var body: some View {
         VStack {
             HStack(alignment: .center) {
                 
-                Image(.manik)
-                    .resizable()
-                    .frame(width: 50, height: 50)
-                    .clipShape(Circle())
+//                Image(.manik)
+//                    .resizable()
+//                    .frame(width: 50, height: 50)
+//                    .clipShape(Circle())
+                AsyncImage(url: URL(string: "\(post.photo)")) { image in
+                    image
+                        .resizable()
+                        .clipShape(Circle())
+                } placeholder: {
+                    ProgressView()
+                }
+                .frame(width: 50, height: 50)
                 
                 VStack(alignment: .leading, spacing: 0.0) {
-                    Text("Manik Lakhanpal")
+                    Text("\(post.name)")
                         .font(.title2)
                         .fontWeight(.medium)
                     
-                    Text("@w16manik")
+                    Text("@\(post.uid)")
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                 }
@@ -36,10 +46,10 @@ struct PostComponent: View {
             
             HStack(alignment: .center) {
                 VStack(alignment: .leading, spacing: 0.0) {
-                    Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
+                    Text("\(post.content)")
                         .padding(.bottom, 8)
                     
-                    Text("20 Jan 2025, 8:12 am")
+                    Text("\(post.formattedCreatedAt)")
                     
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
@@ -69,6 +79,6 @@ struct PostComponent: View {
     }
 }
 
-#Preview {
-    PostComponent()
-}
+//#Preview {
+//    PostComponent(post: )
+//}

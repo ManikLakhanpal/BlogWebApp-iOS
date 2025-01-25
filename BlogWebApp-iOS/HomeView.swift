@@ -8,13 +8,21 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State var posts: [Post] = []
+    
     var body: some View {
         NavigationStack {
             ScrollView {
                 LazyVStack {
-                    ForEach(0..<20, id: \.self) { _ in
-                        PostComponent()
+                    ForEach(posts, id: \.self) { post in
+                        PostComponent(post: post)
                     }
+                }
+            }
+            .onAppear {
+                Task {
+                    let (data, _) = try await URLSession.shared.data(from: URL(string: "https://blogs-api.w16manik.ninja/posts")!)
+                    posts = try JSONDecoder().decode([Post].self, from: data)
                 }
             }
             .toolbar {
