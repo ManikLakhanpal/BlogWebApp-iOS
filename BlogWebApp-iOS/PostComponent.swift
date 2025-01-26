@@ -11,71 +11,62 @@ struct PostComponent: View {
     var post: Post
     
     var body: some View {
-        VStack {
-            HStack(alignment: .center) {
-                
-//                Image(.manik)
-//                    .resizable()
-//                    .frame(width: 50, height: 50)
-//                    .clipShape(Circle())
+        VStack(alignment: .leading, spacing: 16) {
+            
+            HStack(alignment: .center, spacing: 12) {
+                // Async image handling
                 AsyncImage(url: URL(string: "\(post.photo)")) { image in
                     image
                         .resizable()
+                        .scaledToFill()
                         .frame(width: 50, height: 50)
                         .clipShape(Circle())
                 } placeholder: {
                     ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle())
+                        .frame(width: 50, height: 50)
                 }
                 
-                VStack(alignment: .leading, spacing: 0.0) {
+                VStack(alignment: .leading, spacing: 4) {
                     Text("\(post.name)")
-                        .font(.title2)
-                        .fontWeight(.medium)
+                        .font(.title3)
+                        .fontWeight(.semibold)
                     
                     Text("@\(post.uid)")
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                 }
-                .padding(.leading)
                 
                 Spacer()
+            }
+            .padding(.horizontal)
+            
+            VStack(alignment: .leading, spacing: 8) {
+                Text("\(post.content)")
+                    .font(.body)
                 
+                Text("\(post.formattedCreatedAt)")
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
             }
+            .padding(.horizontal)
             
-            .padding(.leading)
-            
-            HStack(alignment: .center) {
-                VStack(alignment: .leading, spacing: 0.0) {
-                    Text("\(post.content)")
-                        .padding(.bottom, 8)
-                    
-                    Text("\(post.formattedCreatedAt)")
-                    
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-                }
-                .padding(.leading, 10)
-            }
-            
-            
-            HStack(alignment: .center) {
-                Label("" ,systemImage: "heart")
+            HStack {
+                Label("", systemImage: "heart")
                 Spacer()
-                Label("" ,systemImage: "flag")
+                Label("", systemImage: "flag")
                 Spacer()
-                Label("" ,systemImage: "bookmark")
+                Label("", systemImage: "bookmark")
                 Spacer()
-                Label("" ,systemImage: "square.and.arrow.up")
+                Label("", systemImage: "square.and.arrow.up")
             }
             .foregroundStyle(.secondary)
             .padding(.horizontal)
             .padding(.top, 10)
             
-            
+            Divider()
+                .padding(.vertical)
         }
-        .padding(.vertical)
-        
-        Divider()
     }
 }
 
