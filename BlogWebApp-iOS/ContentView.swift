@@ -39,7 +39,7 @@ struct ContentView: View {
                 }
             
             // Currently work in progress
-            TryAPI()
+            LoginView()
                 .tabItem {
                     Label("Message", systemImage: "message")
                 }
