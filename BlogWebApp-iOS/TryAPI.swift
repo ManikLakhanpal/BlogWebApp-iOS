@@ -36,9 +36,18 @@ struct TryAPI: View {
             if showButton {
                 Button {
                     Task {
-                        let (data, _) = try await URLSession.shared.data(from: URL(string: "https://blogs-api.w16manik.ninja/posts")!)
-                        let posts = try JSONDecoder().decode([Post].self, from: data)
-                        joke = posts
+                        do {
+                            let (data, _) = try await URLSession.shared.data(from: URL(string: "https://blogs-api.w16manik.ninja/posts")!)
+                            
+                            print(data)
+                            
+                            let posts = try JSONDecoder().decode([Post].self, from: data)
+                            joke = posts
+                            
+                            print(joke)
+                        } catch {
+                            print(error)
+                        }
                     }
                 } label: {
                     Text("Fetch Joke")

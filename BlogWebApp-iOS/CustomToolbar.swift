@@ -25,7 +25,7 @@ struct CustomToolbar: ToolbarContent {
         if imageName != nil {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button(action: onImageTap) {
-                    Image(imageName?.lowercased() ?? "")
+                    Image(imageName ?? "")
                         .resizable()
                         .frame(width: 32, height: 32)
                         .clipShape(Capsule())

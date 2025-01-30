@@ -28,7 +28,7 @@ struct HomeView: View {
             .toolbar {
                 CustomToolbar(
                     title: "Home",
-                    imageName: "manik",
+                    imageName: "Manik",
                     onImageTap: {
                         print("Image tapped!")
                     }

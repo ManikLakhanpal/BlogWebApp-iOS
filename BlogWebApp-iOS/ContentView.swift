@@ -33,7 +33,7 @@ struct ContentView: View {
                 }
             
             // Currently work in progress
-            Text("Notifications Selected")
+            TryAPI()
                 .tabItem {
                     Label("Notification", systemImage: "bell")
                 }
