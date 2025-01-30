@@ -25,6 +25,14 @@ struct HomeView: View {
                     posts = try JSONDecoder().decode([Post].self, from: data)
                 }
             }
+            
+            .refreshable {
+                Task {
+                    let (data, _) = try await URLSession.shared.data(from: URL(string: "https://blogs-api.w16manik.ninja/posts")!)
+                    posts = try JSONDecoder().decode([Post].self, from: data)
+                }
+            }
+            
             .toolbar {
                 CustomToolbar(
                     title: "Home",
