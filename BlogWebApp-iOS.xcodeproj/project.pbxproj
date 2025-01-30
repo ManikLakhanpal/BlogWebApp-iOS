@@ -6,27 +6,8 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXContainerItemProxy section */
-		78B334362CE27D2A00689769 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 78B3341D2CE27D2900689769 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 78B334242CE27D2900689769;
-			remoteInfo = "BlogWebApp-iOS";
-		};
-		78B334402CE27D2A00689769 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 78B3341D2CE27D2900689769 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 78B334242CE27D2900689769;
-			remoteInfo = "BlogWebApp-iOS";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		78B334252CE27D2900689769 /* BlogWebApp-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BlogWebApp-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		78B334352CE27D2A00689769 /* BlogWebApp-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BlogWebApp-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		78B3343F2CE27D2A00689769 /* BlogWebApp-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BlogWebApp-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -35,34 +16,10 @@
 			path = "BlogWebApp-iOS";
 			sourceTree = "<group>";
 		};
-		78B334382CE27D2A00689769 /* BlogWebApp-iOSTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "BlogWebApp-iOSTests";
-			sourceTree = "<group>";
-		};
-		78B334422CE27D2A00689769 /* BlogWebApp-iOSUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "BlogWebApp-iOSUITests";
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		78B334222CE27D2900689769 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		78B334322CE27D2A00689769 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		78B3343C2CE27D2A00689769 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -76,8 +33,6 @@
 			isa = PBXGroup;
 			children = (
 				78B334272CE27D2900689769 /* BlogWebApp-iOS */,
-				78B334382CE27D2A00689769 /* BlogWebApp-iOSTests */,
-				78B334422CE27D2A00689769 /* BlogWebApp-iOSUITests */,
 				78B334262CE27D2900689769 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -86,8 +41,6 @@
 			isa = PBXGroup;
 			children = (
 				78B334252CE27D2900689769 /* BlogWebApp-iOS.app */,
-				78B334352CE27D2A00689769 /* BlogWebApp-iOSTests.xctest */,
-				78B3343F2CE27D2A00689769 /* BlogWebApp-iOSUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -117,52 +70,6 @@
 			productReference = 78B334252CE27D2900689769 /* BlogWebApp-iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		78B334342CE27D2A00689769 /* BlogWebApp-iOSTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 78B3344C2CE27D2A00689769 /* Build configuration list for PBXNativeTarget "BlogWebApp-iOSTests" */;
-			buildPhases = (
-				78B334312CE27D2A00689769 /* Sources */,
-				78B334322CE27D2A00689769 /* Frameworks */,
-				78B334332CE27D2A00689769 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				78B334372CE27D2A00689769 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				78B334382CE27D2A00689769 /* BlogWebApp-iOSTests */,
-			);
-			name = "BlogWebApp-iOSTests";
-			packageProductDependencies = (
-			);
-			productName = "BlogWebApp-iOSTests";
-			productReference = 78B334352CE27D2A00689769 /* BlogWebApp-iOSTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		78B3343E2CE27D2A00689769 /* BlogWebApp-iOSUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 78B3344F2CE27D2A00689769 /* Build configuration list for PBXNativeTarget "BlogWebApp-iOSUITests" */;
-			buildPhases = (
-				78B3343B2CE27D2A00689769 /* Sources */,
-				78B3343C2CE27D2A00689769 /* Frameworks */,
-				78B3343D2CE27D2A00689769 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				78B334412CE27D2A00689769 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				78B334422CE27D2A00689769 /* BlogWebApp-iOSUITests */,
-			);
-			name = "BlogWebApp-iOSUITests";
-			packageProductDependencies = (
-			);
-			productName = "BlogWebApp-iOSUITests";
-			productReference = 78B3343F2CE27D2A00689769 /* BlogWebApp-iOSUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -176,14 +83,6 @@
 					78B334242CE27D2900689769 = {
 						CreatedOnToolsVersion = 16.1;
 					};
-					78B334342CE27D2A00689769 = {
-						CreatedOnToolsVersion = 16.1;
-						TestTargetID = 78B334242CE27D2900689769;
-					};
-					78B3343E2CE27D2A00689769 = {
-						CreatedOnToolsVersion = 16.1;
-						TestTargetID = 78B334242CE27D2900689769;
-					};
 				};
 			};
 			buildConfigurationList = 78B334202CE27D2900689769 /* Build configuration list for PBXProject "BlogWebApp-iOS" */;
@@ -196,7 +95,6 @@
 			mainGroup = 78B3341C2CE27D2900689769;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				786E94002D467604007F7FA2 /* XCRemoteSwiftPackageReference "keychain-swift" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 78B334262CE27D2900689769 /* Products */;
@@ -204,28 +102,12 @@
 			projectRoot = "";
 			targets = (
 				78B334242CE27D2900689769 /* BlogWebApp-iOS */,
-				78B334342CE27D2A00689769 /* BlogWebApp-iOSTests */,
-				78B3343E2CE27D2A00689769 /* BlogWebApp-iOSUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		78B334232CE27D2900689769 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		78B334332CE27D2A00689769 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		78B3343D2CE27D2A00689769 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -242,34 +124,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		78B334312CE27D2A00689769 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		78B3343B2CE27D2A00689769 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		78B334372CE27D2A00689769 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 78B334242CE27D2900689769 /* BlogWebApp-iOS */;
-			targetProxy = 78B334362CE27D2A00689769 /* PBXContainerItemProxy */;
-		};
-		78B334412CE27D2A00689769 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 78B334242CE27D2900689769 /* BlogWebApp-iOS */;
-			targetProxy = 78B334402CE27D2A00689769 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		78B334472CE27D2A00689769 /* Debug */ = {
@@ -451,74 +306,6 @@
 			};
 			name = Release;
 		};
-		78B3344D2CE27D2A00689769 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "ninja.w16manik.BlogWebApp-iOSTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BlogWebApp-iOS.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BlogWebApp-iOS";
-			};
-			name = Debug;
-		};
-		78B3344E2CE27D2A00689769 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "ninja.w16manik.BlogWebApp-iOSTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BlogWebApp-iOS.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BlogWebApp-iOS";
-			};
-			name = Release;
-		};
-		78B334502CE27D2A00689769 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "ninja.w16manik.BlogWebApp-iOSUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "BlogWebApp-iOS";
-			};
-			name = Debug;
-		};
-		78B334512CE27D2A00689769 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "ninja.w16manik.BlogWebApp-iOSUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "BlogWebApp-iOS";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -540,36 +327,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		78B3344C2CE27D2A00689769 /* Build configuration list for PBXNativeTarget "BlogWebApp-iOSTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				78B3344D2CE27D2A00689769 /* Debug */,
-				78B3344E2CE27D2A00689769 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		78B3344F2CE27D2A00689769 /* Build configuration list for PBXNativeTarget "BlogWebApp-iOSUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				78B334502CE27D2A00689769 /* Debug */,
-				78B334512CE27D2A00689769 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		786E94002D467604007F7FA2 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/evgenyneu/keychain-swift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 24.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 78B3341D2CE27D2900689769 /* Project object */;
 }
