@@ -19,6 +19,7 @@ struct HomeView: View {
                     }
                 }
             }
+            .safeAreaPadding(.top, 20)
             .onAppear {
                 Task {
                     let (data, _) = try await URLSession.shared.data(from: URL(string: "https://blogs-api.w16manik.ninja/posts")!)

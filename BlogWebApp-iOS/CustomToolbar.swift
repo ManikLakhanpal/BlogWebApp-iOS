@@ -18,8 +18,7 @@ struct CustomToolbar: ToolbarContent {
         ToolbarItem(placement: .navigationBarLeading) {
             Text(title)
                 .font(.largeTitle)
-                .fontWeight(.heavy)
-                .padding(.vertical, paddingVal)
+                .fontWeight(.heavy) 
         }
         
         if imageName != nil {
@@ -30,7 +29,6 @@ struct CustomToolbar: ToolbarContent {
                         .frame(width: 32, height: 32)
                         .clipShape(Capsule())
                 }
-                .padding(.vertical, paddingVal)
             }
         }
         
