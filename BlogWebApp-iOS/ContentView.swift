@@ -7,21 +7,6 @@
 
 import SwiftUI
 
-struct Post: Codable, Hashable {
-    let name: String
-    let email: String
-    let uid: String
-    let content: String
-    let photo: String
-    let createdAt: Double
-    let likes: [String]
-    
-    // Computed property to return the formatted createdAt value
-    var formattedCreatedAt: String {
-        return convertUnixTimeToDateString(unixTime: createdAt)
-    }
-}
-
 struct ContentView: View {
     var body: some View {
         // Different TabViews for different pages

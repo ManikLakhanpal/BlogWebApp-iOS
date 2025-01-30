@@ -23,6 +23,9 @@ struct ProfileView: View {
                         }
                     }
                 }
+                .refreshable {
+                    
+                }
             }
             .onAppear {
                 Task {

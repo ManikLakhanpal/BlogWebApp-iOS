@@ -22,16 +22,12 @@ struct HomeView: View {
             .safeAreaPadding(.top, 20)
             .onAppear {
                 Task {
-                    let (data, _) = try await URLSession.shared.data(from: URL(string: "https://blogs-api.w16manik.ninja/posts")!)
-                    posts = try JSONDecoder().decode([Post].self, from: data)
+                    posts = await getPosts()
                 }
             }
             
             .refreshable {
-                Task {
-                    let (data, _) = try await URLSession.shared.data(from: URL(string: "https://blogs-api.w16manik.ninja/posts")!)
-                    posts = try JSONDecoder().decode([Post].self, from: data)
-                }
+                posts = await getPosts()
             }
             
             .toolbar {
@@ -46,6 +42,8 @@ struct HomeView: View {
         }
     }
 }
+
+
 
 #Preview {
     HomeView()
