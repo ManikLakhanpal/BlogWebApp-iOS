@@ -23,16 +23,18 @@ struct ProfileView: View {
                         }
                     }
                 }
-                .refreshable {
-                    
+                .safeAreaPadding(.top, 20)
+                
+                .onAppear {
+                    Task {
+                        posts = await getPosts()
+                    }
                 }
             }
-            .onAppear {
-                Task {
-                    let (data, _) = try await URLSession.shared.data(from: URL(string: "https://blogs-api.w16manik.ninja/posts")!)
-                    posts = try JSONDecoder().decode([Post].self, from: data)
-                }
+            .refreshable {
+                posts = await getPosts()
             }
+            
             .toolbar {
                 CustomToolbar(
                     title: "Profile",
